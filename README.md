@@ -48,3 +48,17 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ```
 mix test
 ```
+
+# Change the Semantic UI theme
+
+If you want to try different Semantic UI theme:
+
+1) go to the folder `assets/vendor/semantic/`
+
+2) open the file `src/theme.config`
+
+3) change the theme (e.g. from `amazon` to `github`)
+
+4) rebuild the theme with `gulp build`
+
+5) rebuild the `priv/static/` assets. Go to the folder `assets/` and execute `npm run build_assets`
