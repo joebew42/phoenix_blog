@@ -1,18 +1,17 @@
-<h2>Show User</h2>
+<h1 class="ui header">Show User</h1>
 
-<ul>
-
-  <li>
+<div class="ui list">
+  <div class="item">
     <strong>Uuid:</strong>
     <%= @user.uuid %>
-  </li>
-
-  <li>
+  </div>
+  <div class="item">
     <strong>Username:</strong>
     <%= @user.username %>
-  </li>
+  </div>
+</div>
 
-</ul>
-
-<span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+<%= link to: user_path(@conn, :index), class: "ui left labeled icon button" do %>
+  <i class="left arrow icon"></i>Back
+<% end %>
+<%= link "Edit", to: user_path(@conn, :edit, @user), class: "ui button" %>
