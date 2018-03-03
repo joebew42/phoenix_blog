@@ -1,28 +1,26 @@
-<h2>Listing Users</h2>
+<h1 class="ui header">List of all users</h1>
 
-<table class="table">
+<%= link "New User", to: user_path(@conn, :new), class: "ui primary button" %>
+
+<table class="ui celled table">
   <thead>
     <tr>
       <th>Uuid</th>
       <th>Username</th>
-
       <th></th>
     </tr>
   </thead>
   <tbody>
-<%= for user <- @users do %>
+  <%= for user <- @users do %>
     <tr>
       <td><%= user.uuid %></td>
       <td><%= user.username %></td>
-
-      <td class="text-right">
-        <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      <td class="right aligned">
+        <%= link "Show", to: user_path(@conn, :show, user), class: "ui button" %>
+        <%= link "Edit", to: user_path(@conn, :edit, user), class: "ui button" %>
+        <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "ui negative button" %>
       </td>
     </tr>
-<% end %>
+  <% end %>
   </tbody>
 </table>
-
-<span><%= link "New User", to: user_path(@conn, :new) %></span>
