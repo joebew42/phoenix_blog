@@ -3,12 +3,12 @@ exports.config = {
   files: {
     javascripts: {
       joinTo: {
-        "js/app.js": /^(semantic\/dist)|(js)/
+        "js/app.js": /^(vendor)|(vendor\/semantic\/dist)|(js)/
       }
     },
     stylesheets: {
       joinTo: {
-        "css/app.css": /^(semantic\/dist)|(css)/
+        "css/app.css": /^(vendor\/semantic\/dist)|(css)/
       }
     },
     templates: {
@@ -19,11 +19,13 @@ exports.config = {
   conventions: {
     assets: [
       /^(static)/,
-      /^(semantic\/dist\/assets)/
+      /^(vendor\/semantic\/dist\/assets)/
     ],
     ignored: [
-      /^(semantic\/tasks)/,
-      /^(semantic\/src)/
+      /^(js\/socket\.js)/,
+      /^(vendor\/semantic\/gulpfile\.js)/,
+      /^(vendor\/semantic\/tasks)/,
+      /^(vendor\/semantic\/src)/
     ]
   },
 
