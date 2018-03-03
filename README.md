@@ -1,20 +1,51 @@
 # PhoenixBlog
 
-To start your Phoenix server:
+## Requirements
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+* npm
+* elixir
+* postgresql
+
+## Setup
+
+Build the [Semantic UI](https://semantic-ui.com/) library
+
+```
+cd assets/
+npm install
+./node_modules/brunch/bin/brunch build
+```
+
+Fetch all dependencies
+
+```
+mix deps.get
+```
+
+You need a PostgreSQL instance running. You can run it quickly with Docker:
+
+```
+docker run -it --rm=true --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres:alpine
+```
+
+Create the database and run all migrations
+
+```
+mix ecto.create && mix ecto.migrate
+```
+
+You're done with the setup!
+
+## Run
+
+```
+mix phx.server
+```
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+## Test
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+```
+mix test
+```
