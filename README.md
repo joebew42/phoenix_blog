@@ -12,8 +12,7 @@ Build the [Semantic UI](https://semantic-ui.com/) library
 
 ```
 cd assets/
-npm install
-./node_modules/brunch/bin/brunch build
+npm install && npm run build_assets
 ```
 
 Fetch all dependencies

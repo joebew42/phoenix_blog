@@ -18,8 +18,7 @@ exports.config = {
 
   conventions: {
     assets: [
-      /^(static)/,
-      /^(vendor\/semantic\/dist\/assets)/
+      /^(static)/
     ],
     ignored: [
       /^(js\/socket\.js)/,
@@ -27,6 +26,15 @@ exports.config = {
       /^(vendor\/semantic\/tasks)/,
       /^(vendor\/semantic\/src)/
     ]
+  },
+
+  hooks: {
+    onCompile(generatedFiles, changedAssets) {
+      var copy = require('copy');
+      copy('vendor/semantic/dist/themes/**/*.*', '../priv/static/css/themes', function(err, files) {
+        if (err) throw err;
+      });
+    }
   },
 
   // Phoenix paths configuration

@@ -2,6 +2,7 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
+    "build_assets": "brunch build",
     "deploy": "brunch build --production",
     "watch": "brunch watch --stdin"
   },
@@ -13,6 +14,7 @@
   "devDependencies": {
     "babel-brunch": "6.1.1",
     "brunch": "2.10.9",
+    "copy": "^0.3.1",
     "clean-css-brunch": "2.10.0",
     "uglify-js-brunch": "2.10.0"
   }
