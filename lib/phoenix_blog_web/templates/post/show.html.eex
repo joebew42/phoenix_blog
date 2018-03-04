@@ -6,6 +6,10 @@
     <%= @post.title %>
   </div>
   <div class="item">
+    <strong>Published:</strong>
+    <%= @post.published_at %>
+  </div>
+  <div class="item">
     <strong>Story:</strong>
     <%= @post.story %>
   </div>

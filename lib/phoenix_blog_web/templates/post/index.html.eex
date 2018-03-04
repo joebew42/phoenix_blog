@@ -7,8 +7,9 @@
 <table class="ui celled table">
   <thead>
     <tr>
-      <th class="seven wide">Title</th>
+      <th class="four wide">Title</th>
       <th>Author</th>
+      <th>Published</th>
       <th class="five wide"></th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
     <tr>
       <td><%= link post.title, to: post_path(@conn, :show, post) %></td>
       <td><%= post.user.username %></td>
+      <td><%= post.published_at %></td>
       <td class="right aligned">
         <%= link "Edit", to: post_path(@conn, :edit, post), class: "tiny ui button" %>
         <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "tiny ui negative button" %>
