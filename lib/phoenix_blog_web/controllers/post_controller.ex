@@ -1,6 +1,8 @@
 defmodule PhoenixBlogWeb.PostController do
   use PhoenixBlogWeb, :controller
 
+  alias PhoenixBlog.Accounts
+
   alias PhoenixBlog.Blogs
   alias PhoenixBlog.Blogs.Post
 
@@ -9,11 +11,12 @@ defmodule PhoenixBlogWeb.PostController do
     render(conn, "index.html", posts: posts)
   end
 
-  # def new(conn, _params) do
-  #   changeset = Accounts.change_user(%User{})
-  #   render(conn, "new.html", changeset: changeset)
-  # end
-  #
+  def new(conn, _params) do
+    changeset = Blogs.change_post(%Post{})
+    all_users = Accounts.list_users
+    render(conn, "new.html", changeset: changeset, all_users: all_users)
+  end
+
   # def create(conn, %{"user" => user_params}) do
   #   case Accounts.create_user(user_params) do
   #     {:ok, user} ->

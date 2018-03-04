@@ -6,15 +6,21 @@
   <% end %>
 
   <div class="required field">
-    <%= label f, :uuid %>
-    <%= text_input f, :uuid %>
-    <%= error_tag f, :uuid %>
+    <%= label f, :user_id %>
+    <%= select f, :user_id, Enum.map(@all_users,  &{&1.username, &1.id}), [class: "ui fluid dropdown"]%>
+    <%= error_tag f, :user_id %>
   </div>
 
   <div class="required field">
-    <%= label f, :username %>
-    <%= text_input f, :username %>
-    <%= error_tag f, :username %>
+    <%= label f, :title %>
+    <%= text_input f, :title %>
+    <%= error_tag f, :title %>
+  </div>
+
+  <div class="required field">
+    <%= label f, :story %>
+    <%= textarea f, :story %>
+    <%= error_tag f, :story %>
   </div>
 
   <%= submit "Submit", class: "ui button primary" %>

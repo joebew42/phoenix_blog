@@ -1,9 +1,9 @@
-<h1 class="ui header">New User</h1>
+<h1 class="ui header">New Post</h1>
 
-<%= render "form.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
+<%= render "form.html", Map.put(assigns, :action, post_path(@conn, :create)) %>
 
 <br/>
 
-<%= link to: user_path(@conn, :index), class: "ui left labeled icon button" do %>
+<%= link to: post_path(@conn, :index), class: "ui left labeled icon button" do %>
   <i class="left arrow icon"></i>Back
 <% end %>
