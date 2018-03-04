@@ -35,6 +35,12 @@ Create the database and run all migrations
 mix ecto.create && mix ecto.migrate
 ```
 
+Run the _seeds_ if you want to populate the database
+
+```
+mix run priv/repo/seeds.exs
+```
+
 You're done with the setup!
 
 ## Run
