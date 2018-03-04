@@ -17,22 +17,23 @@ defmodule PhoenixBlogWeb.PostController do
     render(conn, "new.html", changeset: changeset, all_users: all_users)
   end
 
-  # def create(conn, %{"user" => user_params}) do
-  #   case Accounts.create_user(user_params) do
-  #     {:ok, user} ->
-  #       conn
-  #       |> put_flash(:info, "User created successfully.")
-  #       |> redirect(to: user_path(conn, :show, user))
-  #     {:error, %Ecto.Changeset{} = changeset} ->
-  #       render(conn, "new.html", changeset: changeset)
-  #   end
-  # end
-  #
-  # def show(conn, %{"id" => id}) do
-  #   user = Accounts.get_user!(id)
-  #   render(conn, "show.html", user: user)
-  # end
-  #
+  def create(conn, %{"post" => post_params}) do
+    case Blogs.create_post(post_params) do
+      {:ok, post} ->
+        conn
+        |> put_flash(:info, "Post created successfully.")
+        |> redirect(to: post_path(conn, :show, post))
+      {:error, %Ecto.Changeset{} = changeset} ->
+        all_users = Accounts.list_users
+        render(conn, "new.html", changeset: changeset, all_users: all_users)
+    end
+  end
+
+  def show(conn, %{"id" => id}) do
+    post = Blogs.get_post!(id)
+    render(conn, "show.html", post: post)
+  end
+
   # def edit(conn, %{"id" => id}) do
   #   user = Accounts.get_user!(id)
   #   changeset = Accounts.change_user(user)
