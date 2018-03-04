@@ -7,16 +7,16 @@
 <table class="ui celled table">
   <thead>
     <tr>
-      <th>Uuid</th>
-      <th>Username</th>
+      <th>UUID / Username</th>
       <th class="five wide"></th>
     </tr>
   </thead>
   <tbody>
   <%= for user <- @users do %>
     <tr>
-      <td><%= user.uuid %></td>
-      <td><%= user.username %></td>
+      <td>
+        <%= user.uuid %> / <%= link user.username, to: user_path(@conn, :show, user) %>
+      </td>
       <td class="right aligned">
         <%= link "Show", to: user_path(@conn, :show, user), class: "tiny ui button" %>
         <%= link "Edit", to: user_path(@conn, :edit, user), class: "tiny ui button" %>

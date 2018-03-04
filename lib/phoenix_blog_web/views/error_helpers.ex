@@ -3,7 +3,7 @@ defmodule PhoenixBlogWeb.ErrorHelpers do
 
   def error_tag(form, field) do
     Enum.map(Keyword.get_values(form.errors, field), fn (error) ->
-      content_tag :div, translate_error(error), class: "ui warning message"
+      content_tag :div, translate_error(error), class: "ui pointing red basic label"
     end)
   end
 
