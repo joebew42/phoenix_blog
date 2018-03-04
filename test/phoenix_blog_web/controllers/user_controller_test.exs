@@ -1,7 +1,7 @@
 defmodule PhoenixBlogWeb.UserControllerTest do
   use PhoenixBlogWeb.ConnCase
 
-  import PhoenixBlog.Factories
+  import PhoenixBlog.Factory
 
   @create_attrs %{username: "some username", uuid: "some uuid"}
   @update_attrs %{username: "some updated username", uuid: "some updated uuid"}

@@ -22,7 +22,7 @@ defmodule PhoenixBlog.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import PhoenixBlog.DataCase
-      import PhoenixBlog.Factories
+      import PhoenixBlog.Factory
     end
   end
 
