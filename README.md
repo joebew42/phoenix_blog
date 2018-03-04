@@ -1,10 +1,12 @@
 # PhoenixBlog
 
+A playground application written in Elixir/Phoenix. This is the place where to try all the stuffs related to the web application development with Elixir/Phoenix (e.g. Channels, OTP, Background jobs, ReactJS, Semantic-UI, GraphQL API or Restful API and whatever you'd like to try).
+
 ## Requirements
 
-* npm
-* elixir
-* postgresql
+* npm (ver. 5.7.1 or above)
+* elixir (ver. 1.6.1 or above)
+* postgresql (ver. 9.3 or above)
 
 ## Setup
 
