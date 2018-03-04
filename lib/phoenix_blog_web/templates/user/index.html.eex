@@ -18,7 +18,6 @@
         <%= user.uuid %> / <%= link user.username, to: user_path(@conn, :show, user) %>
       </td>
       <td class="right aligned">
-        <%= link "Show", to: user_path(@conn, :show, user), class: "tiny ui button" %>
         <%= link "Edit", to: user_path(@conn, :edit, user), class: "tiny ui button" %>
         <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "tiny ui negative button" %>
       </td>
