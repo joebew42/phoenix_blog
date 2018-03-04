@@ -1,16 +1,11 @@
 defmodule PhoenixBlogWeb.UserControllerTest do
   use PhoenixBlogWeb.ConnCase
 
-  alias PhoenixBlog.Accounts
+  import PhoenixBlog.Factories
 
   @create_attrs %{username: "some username", uuid: "some uuid"}
   @update_attrs %{username: "some updated username", uuid: "some updated uuid"}
   @invalid_attrs %{username: nil, uuid: nil}
-
-  def fixture(:user) do
-    {:ok, user} = Accounts.create_user(@create_attrs)
-    user
-  end
 
   describe "index" do
     test "lists all users", %{conn: conn} do
@@ -81,8 +76,5 @@ defmodule PhoenixBlogWeb.UserControllerTest do
     end
   end
 
-  defp create_user(_) do
-    user = fixture(:user)
-    {:ok, user: user}
-  end
+  defp create_user(_), do: {:ok, user: insert(:user)}
 end
