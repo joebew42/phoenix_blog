@@ -1,8 +1,8 @@
-<h1 class="ui header">List of all users</h1>
+<h1 class="ui header">Listing Users</h1>
 
 <%= link to: user_path(@conn, :new), class: "ui primary button" do %>
   <i class="icon pencil"></i> New User
-<%= end %>
+<% end %>
 
 <table class="ui celled table">
   <thead>
