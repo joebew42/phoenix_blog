@@ -1,5 +1,9 @@
-<h2>New User</h2>
+<h1 class="ui header">New User</h1>
 
 <%= render "form.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
 
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+<br/>
+
+<%= link to: user_path(@conn, :index), class: "ui left labeled icon button" do %>
+  <i class="left arrow icon"></i>Back
+<% end %>
