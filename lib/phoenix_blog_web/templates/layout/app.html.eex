@@ -15,6 +15,7 @@
       <div class="ui container">
         <a href="<%= page_path(@conn, :index) %>" class="header item">Home</a>
         <a href="<%= user_path(@conn, :index) %>" class="item">Users</a>
+        <a href="<%= post_path(@conn, :index) %>" class="item">Posts</a>
       </div>
     </div>
     <div class="ui main container">
