@@ -2,10 +2,12 @@ defmodule PhoenixBlog.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias PhoenixBlog.Blogs.Post
 
   schema "users" do
     field :username, :string
     field :uuid, :string
+    has_many :post, Post
 
     timestamps()
   end
