@@ -41,18 +41,19 @@ defmodule PhoenixBlogWeb.PostController do
     render(conn, "edit.html", post: post, changeset: changeset, all_users: all_users)
   end
 
-  # def update(conn, %{"id" => id, "user" => user_params}) do
-  #   user = Accounts.get_user!(id)
-  #
-  #   case Accounts.update_user(user, user_params) do
-  #     {:ok, user} ->
-  #       conn
-  #       |> put_flash(:info, "User updated successfully.")
-  #       |> redirect(to: user_path(conn, :show, user))
-  #     {:error, %Ecto.Changeset{} = changeset} ->
-  #       render(conn, "edit.html", user: user, changeset: changeset)
-  #   end
-  # end
+  def update(conn, %{"id" => id, "post" => post_params}) do
+    post = Blogs.get_post!(id)
+
+    case Blogs.update_post(post, post_params) do
+      {:ok, post} ->
+        conn
+        |> put_flash(:info, "Post updated successfully.")
+        |> redirect(to: post_path(conn, :show, post))
+      {:error, %Ecto.Changeset{} = changeset} ->
+        all_users = Accounts.list_users
+        render(conn, "edit.html", post: post, changeset: changeset, all_users: all_users)
+    end
+  end
   #
   # def delete(conn, %{"id" => id}) do
   #   user = Accounts.get_user!(id)
