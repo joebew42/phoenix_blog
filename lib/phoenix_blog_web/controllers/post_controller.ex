@@ -34,12 +34,13 @@ defmodule PhoenixBlogWeb.PostController do
     render(conn, "show.html", post: post)
   end
 
-  # def edit(conn, %{"id" => id}) do
-  #   user = Accounts.get_user!(id)
-  #   changeset = Accounts.change_user(user)
-  #   render(conn, "edit.html", user: user, changeset: changeset)
-  # end
-  #
+  def edit(conn, %{"id" => id}) do
+    post = Blogs.get_post!(id)
+    changeset = Blogs.change_post(post)
+    all_users = Accounts.list_users
+    render(conn, "edit.html", post: post, changeset: changeset, all_users: all_users)
+  end
+
   # def update(conn, %{"id" => id, "user" => user_params}) do
   #   user = Accounts.get_user!(id)
   #

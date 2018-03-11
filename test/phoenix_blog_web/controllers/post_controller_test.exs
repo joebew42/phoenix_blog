@@ -46,15 +46,14 @@ defmodule PhoenixBlogWeb.PostControllerTest do
     end
   end
 
-  # describe "edit user" do
-  #   setup [:create_user]
-  #
-  #   test "renders form for editing chosen user", %{conn: conn, user: user} do
-  #     conn = get conn, user_path(conn, :edit, user)
-  #     assert html_response(conn, 200) =~ "Edit User"
-  #   end
-  # end
-  #
+  describe "edit post" do
+    test "renders form for editing chosen user", %{conn: conn} do
+      post = insert(:post)
+      conn = get conn, post_path(conn, :edit, post)
+      assert html_response(conn, 200) =~ "Edit Post"
+    end
+  end
+
   # describe "update user" do
   #   setup [:create_user]
   #
