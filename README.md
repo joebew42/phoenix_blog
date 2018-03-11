@@ -70,13 +70,3 @@ If you want to try different Semantic UI theme:
 4) rebuild the theme with `gulp build`
 
 5) rebuild the `priv/static/` assets. Go to the folder `assets/` and execute `npm run build_assets`
-
-# Scratchpad
-
-## DOING
-
-- Edit an existing post
-
-## TODO
-
-- What to do when the post we want to edit does not exists?
